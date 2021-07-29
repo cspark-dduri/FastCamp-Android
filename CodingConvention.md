@@ -35,20 +35,26 @@ impor 정리를 잊지 않도록 한다.  `Window` `ctrl`+`alt`+`o` `/`  `Mac`  
   ``` ex)
   const val NUMBER = 5
   val NAMES = listOf("Alice", "Bob")
-  val AGES = mapOf("Alice" to 35, "Bob" to 32)
   val COMMA_JOINER = Joiner.on(',') // Joiner is immutable
   val EMPTY_ARRAY = arrayOf()
+  EXTRA_SOMETHING
   ```
   
 - **Member 변수** : mVriableName 
 
-  `ex) mTextFeild`
+  `ex) mSetUser`
 
-- **(Static) Final 변수** : ALL_UPPER_CASE
+- **Local 변수** : lvVriableName
 
-  `ex) EXTRA_SOMETHING`
+  `ex) lvPhoneNumber`
 
-  
+- **Member 변수 중 Observe ** : mRxVriableName 
+
+  `ex) private val mRxReqLogin: PublishSubject<ReqLogIn> = PublishSubject.create()`
+
+- **Local 변수 중 Observe** : rxVriableName
+
+  `ex) var rxClickLeave: PublishSubject<Boolean> = PublishSubject.create()`
 
 ### Class member ordering
 
@@ -64,35 +70,54 @@ impor 정리를 잊지 않도록 한다.  `Window` `ctrl`+`alt`+`o` `/`  `Mac`  
 
 ### Method Chain case
 
-```java
+```
 Picasso.with(context)
 	   .load("http://ribot.co.uk/images/sexyjoe.jpg")
-	   .into(imageView);
+	   .into(imageView)
 ```
 
 
 
 ### Long parameter case
 
-```java
+```
 loadPicture(context,
        "http://ribot.co.uk/images/sexyjoe.jpg",
        mImageViewProfilePicture,
        clickListener,
-       "Title of the picture");
+       "Title of the picture")
 ```
 
 
 
-### 제어문 블럭 설정
+### 블록
 
-항상 블럭을 사용하도록 한다
+`else if/else` 분기가 없고 한 줄에 들어가는 `when` 분기 및 `if` 문 본문에는 중괄호가 필요하지 않습니다.
 
-```java
-if( isTrue() ) {
+```
+if (string.isEmpty()) return
 
-   ...
+when (value) {
+    0 -> return
+    // …
 }
+```
+그 외 모두 블록을 사용 합니다. 
+
+### 빈 블록
+
+빈 블록 또는 블록 형식 구문은 K&R 스타일이어야 합니다
+
+```
+try {
+    doSomething()
+} catch (e: Exception) {} // WRONG!
+```
+```
+try {
+    doSomething()
+} catch (e: Exception) {
+} // Okay
 ```
 
 
@@ -109,18 +134,16 @@ if( isTrue() ) {
 
 - Activity Intent에 `EXTRA_`를 넣어주는 경우, 해당 Activity에 `startActivity()` 혹은 `getIntent()`를 구현하고 이를 사용한다.
 
-```java
-public static void startActivity(Context context, @DrawableRes int photoResourceId) {  
-  Intent intent = new Intent(context, PhotoDetailActivity.class);  
-  intent.putExtra(EXTRA_PHOTO_RESOURCE_ID, photoResourceId);  
-  context.startActivity(intent);  
-}
-public static Intent getIntent(Context context, String brandId, String brandName) {  
-  Intent intent = new Intent(context, SelectCarActivity.class);  
-  intent.putExtra(EXTRA_BRAND_ID, brandId);  
-  intent.putExtra(EXTRA_BRAND_NAME, brandName);  
-  return intent;  
-}
+```
+  companion object{
+    private const val ARG_PARAM_ISMAIN = "ARG_PARAM_ISMAIN"
+    
+    fun startActivity(act: Activity, isMain: Boolean) {
+	val intent = Intent(act, SecondActivity::class.java)
+	intent.putExtra(ARG_PARAM_ISMAIN, isMain)
+	act.startActivity(intent)
+     }
+   }
 ```
 
 #### Fragment
@@ -128,16 +151,9 @@ public static Intent getIntent(Context context, String brandId, String brandName
 - Fragment에 `ARGUMENT_`를 넣어주는 경우, 해당 Fragment에 `newInstance()`를 구현하고 이를 사용한다.
 - Fragment 생성자의 Parameter로 넘기지 않는다. [Best Practice to Instantiate Fragments with Arguments in Android](https://gunhansancar.com/best-practice-to-instantiate-fragments-with-arguments-in-android/)
 
-```java
-public static UserFragment newInstance(User user) {
-	UserFragment fragment = new UserFragment();
-	Bundle args = new Bundle();
-	args.putParcelable(ARGUMENT_USER, user);
-	fragment.setArguments(args)
-	return fragment;
-}
 ```
-
+예제 코드 확인 중
+```
 
 
 ### Line
