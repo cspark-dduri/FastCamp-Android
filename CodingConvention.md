@@ -1,4 +1,10 @@
-# 코딩 컨벤션
+# 코딩 컨벤션 
+
+*아래의 사이트를 참고하여 작성*
+
+[kotlinStyleGuide](https://developer.android.com/kotlin/style-guide)
+
+
 
 - 기본 정렬은 intelliJ 자동완성을 사용한다.  
 
@@ -12,9 +18,7 @@
    
    Mac : `Option`+`Command`+`O`
 
-*참고한 사이트*
 
-[kotlinStyleGuide](https://developer.android.com/kotlin/style-guide)
 
 
 ## Kotlin
