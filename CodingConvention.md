@@ -4,9 +4,10 @@
 
 impor 정리를 잊지 않도록 한다.  `Window` `ctrl`+`alt`+`o` `/`  `Mac`  `option`+`Command`+`o`
 
-기본은 [ribot](https://github.com/ribot/android-guidelines) [prnd](https://github.com/PRNDcompany/android-style-guide)의 가이드라인을 참고하여 작성.
-
-
+*참고한 사이트*
+[Ribot](https://github.com/ribot/android-guidelines) 
+[PRNDcompany](https://github.com/PRNDcompany/android-style-guide)
+[kotlinlang](https://kotlinlang.org/docs/coding-conventions.html#interface-implementation-layout)
 
 ## Kotlin
 
