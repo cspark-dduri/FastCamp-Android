@@ -15,18 +15,22 @@ impor 정리를 잊지 않도록 한다.  `Window` `ctrl`+`alt`+`o` `/`  `Mac`  
 
 ### Naming
 
-- 단축형 또는 알수 없는 이름은 절대 :x:
 
 - **클래스 이름** : [PascalCase](https://zetawiki.com/wiki/%EC%B9%B4%EB%A9%9C%ED%91%9C%EA%B8%B0%EB%B2%95_camelCase,_%ED%8C%8C%EC%8A%A4%EC%B9%BC%ED%91%9C%EA%B8%B0%EB%B2%95_PascalCase) 따르며, 구성 요소 이름으로 끝나야 한다.
   
   `ex) SignInActivity, SignInFragment, ImageUploaderService, ChangePasswordDialo`
   
-
 - **함수 이름** : [camelCase](https://en.wikipedia.org/wiki/Camel_case) 따르며, 동사 또는 동사구를 사용한다. 
 
   `ex) sendMessage 또는 stop`
 
-- **상수 이름** : [UPPER_SNAKE_CASE(모두 대문자)](https://en.wikipedia.org/wiki/Snake_case)를 사용하며, 밑줄로 단어를 구분합니다. 
+- **상수 이름** : [UPPER_SNAKE_CASE(모두 대문자)](https://en.wikipedia.org/wiki/Snake_case)를 사용하며, 밑줄로 단어를 구분합니다.
+
+  ### 상수란? ### 
+    - [위키백과](https://ko.wikipedia.org/wiki/%EC%83%81%EC%88%98)
+    ```
+    상수는 맞춤 get 함수가 없는 val 속성이며 콘텐츠를 세부적으로 변경할 수 없고 함수에 감지할 수 있는 부작용이 없습니다. 여기에는 변경할 수 없는 유형과 이 유형의 변경할 수 없는 컬렉션뿐만 아니라 스칼라와 문자열도 포함됩니다(const로 표시된 경우). 인스턴스의 관찰 가능한 상태가 변경될 수 있는 경우 인스턴스는 상수가 아닙니다. 
+    ```
 
   ```
   const val NUMBER = 5
@@ -34,10 +38,8 @@ impor 정리를 잊지 않도록 한다.  `Window` `ctrl`+`alt`+`o` `/`  `Mac`  
   val AGES = mapOf("Alice" to 35, "Bob" to 32)
   val COMMA_JOINER = Joiner.on(',') // Joiner is immutable
   val EMPTY_ARRAY = arrayOf()
-  
   ```
   
-
 - **Member 변수** : mVriableName 
 
   `ex) mTextFeild`
