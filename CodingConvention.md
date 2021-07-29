@@ -22,11 +22,11 @@
 ### Naming
 
 
-- **클래스 이름** : [PascalCase](https://zetawiki.com/wiki/%EC%B9%B4%EB%A9%9C%ED%91%9C%EA%B8%B0%EB%B2%95_camelCase,_%ED%8C%8C%EC%8A%A4%EC%B9%BC%ED%91%9C%EA%B8%B0%EB%B2%95_PascalCase) 따르며, 구성 요소 이름으로 끝나야 한다.
+- **클래스 이름** : [PascalCase](https://zetawiki.com/wiki/%EC%B9%B4%EB%A9%9C%ED%91%9C%EA%B8%B0%EB%B2%95_camelCase,_%ED%8C%8C%EC%8A%A4%EC%B9%BC%ED%91%9C%EA%B8%B0%EB%B2%95_PascalCase) 따르며, 구성 요소 이름으로 끝나야 합니다.
   
   `ex) SignInActivity, SignInFragment, ImageUploaderService, ChangePasswordDialo`
   
-- **함수 이름** : [camelCase](https://en.wikipedia.org/wiki/Camel_case) 따르며, 동사 또는 동사구를 사용한다. 
+- **함수 이름** : [camelCase](https://en.wikipedia.org/wiki/Camel_case) 따르며, 동사 또는 동사구를 사용합니다. 
 
   `ex) sendMessage 또는 stop`
 
