@@ -19,6 +19,7 @@ impor 정리를 잊지 않도록 한다.  `Window` `ctrl`+`alt`+`o` `/`  `Mac`  
 
 - **Class files** : [UpperCamelCase](https://en.wikipedia.org/wiki/Camel_case)
   클래스 이름은 구성 요소 이름으로 끝나야 한다.
+  
   `ex) SignInActivity, SignInFragment, ImageUploaderService, ChangePasswordDialo`
 - **Values** : 명사형
 
