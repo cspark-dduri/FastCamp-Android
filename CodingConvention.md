@@ -1,8 +1,8 @@
 # 코딩 컨벤션
 
-기본 정렬은 intellij 자동완성을 사용 한다.  :wink:`ctrl`+`alt`+`l`
+기본 정렬은 intellij 자동완성을 사용 한다.  Window : `ctrl`+`alt`+`l`  Mac : 'option'+'Command'+'l'
 
-impor 정리를 잊지 않도록 한다.  `ctrl`+`alt`+`o`
+impor 정리를 잊지 않도록 한다.  `ctrl`+`alt`+`o` 
 
 기본은 [ribot](https://github.com/ribot/android-guidelines)와 [prnd](https://github.com/PRNDcompany/android-style-guide)의 가이드라인을 참고하였습니다.
 
