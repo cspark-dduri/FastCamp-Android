@@ -5,9 +5,10 @@
 impor 정리를 잊지 않도록 한다.  `Window` `ctrl`+`alt`+`o` `/`  `Mac`  `option`+`Command`+`o`
 
 *참고한 사이트*
+[kotlinStyleGuide](https://developer.android.com/kotlin/style-guide)
 [Ribot](https://github.com/ribot/android-guidelines) 
 [PRNDcompany](https://github.com/PRNDcompany/android-style-guide)
-[kotlinlang](https://kotlinlang.org/docs/coding-conventions.html#interface-implementation-layout)
+
 
 ## Kotlin
 
@@ -15,20 +16,32 @@ impor 정리를 잊지 않도록 한다.  `Window` `ctrl`+`alt`+`o` `/`  `Mac`  
 
 ### Naming
 
-- 단축형은 절대 :x:
+- 단축형 또는 알수 없는 이름은 절대 :x:
 
-- **Class files** : [UpperCamelCase](https://en.wikipedia.org/wiki/Camel_case)
+- **Class files** : [PascalCase](https://zetawiki.com/wiki/%EC%B9%B4%EB%A9%9C%ED%91%9C%EA%B8%B0%EB%B2%95_camelCase,_%ED%8C%8C%EC%8A%A4%EC%B9%BC%ED%91%9C%EA%B8%B0%EB%B2%95_PascalCase)
+  
   클래스 이름은 구성 요소 이름으로 끝나야 한다.
   
   `ex) SignInActivity, SignInFragment, ImageUploaderService, ChangePasswordDialo`
+  
 - **Values** : 명사형
 
-- **Method** : 동사형
+  `ex) car`
 
-  `ex) isTure();`
+- **함수 이름** : [camelCase](https://en.wikipedia.org/wiki/Camel_case) 따르며, 동사 또는 동사구를 사용한다. 
 
-- **Static 변수** : sVariableName 
-  `ex) sMaxNumber`
+  `ex) sendMessage 또는 stop`
+
+- **상수 이름** : UPPER_SNAKE_CASE(모두 대문자)를 사용하며 밑줄로 단어를 구분합니다. 
+
+  ``
+  const val NUMBER = 5
+val NAMES = listOf("Alice", "Bob")
+val AGES = mapOf("Alice" to 35, "Bob" to 32)
+val COMMA_JOINER = Joiner.on(',') // Joiner is immutable
+val EMPTY_ARRAY = arrayOf()
+  ``
+  
 
 - **Member 변수** : mVriableName 
 
@@ -141,45 +154,14 @@ public static UserFragment newInstance(User user) {
 
 ### 새파일 생성시 주석
 
-```ㅓㅁㅍㅁ
+```
 /**
- * Created by ted on 2018-07-12.
- * 사용 용도
+ * Created by cspark on 2021-07-29.
+ * 사용 용도 작성 (간략히라도 반드시 작성)
  */
 ```
 
 - 수정방법: `Preferences` -> `Editor` -> `File and Code Templates` -> `includes`탭 -> `File Header` 내용 삭제
-
-
-
-### Util/Helper/Manager
-
-- 특정기능을 수행하거나 상태를 관리하거나 분리되어 동작을 수행하는 클래스에 대한 사용처별 이름을 정의한다.
-
-
-
-#### Util
-
-- `public static void AAA`등으로 쓰이는 여러곳에서 사용되는 util성 기능을 보아둔 클래스
-- `aa.bb.cc.util` 패키지에 모두 모아둔다.
-- 예) `DateFormatUtil`, `PixelUtil`, `BitmapUtil`등
-
-
-
-#### Helper
-
-- 특정 패키지나 기능에서 한정되어 사용되는 `public static void AAA` 클래스
-- 공통으로 쓰이지 않고 특정 기능의 코드를 분리하기 위한 용도로 사용한다.
-- 예) `NotificationChannelHelper`등
-
-
-
-#### Manager
-
-- 항상 내부에서 instance로 만들어서 관리되는 용도
-- 내부적으로 state 혹은 information을 가지고 있어서 호출한곳에서의 상태에 따라서 관리되는 값을 변경하고 반영하는 작업을 해준다.
-- 예) `RegisterStepManager`, `RegisterCarInfoConfirmManager`등
-
 
 
 ### Exception
@@ -334,9 +316,16 @@ public static UserFragment newInstance(User user) {
 
 ### Dimension
 
+- Default screen margins, per the Android Design guidelines
+
+```xml
+  <dimen name="activity_horizontal_margin">16dp</dimen>
+  <dimen name="activity_vertical_margin">16dp</dimen>
+```
+
 - \<WHERE>\_\<DESCRIPTION>_\<WHAT>
 
-- 대부분의 margin/padding 은 아래 정의된 space_xxx로만 사용되도록 한다.
+- 기본 margin/padding 은 아래 정의된 space_xxx로만 사용되도록 한다. (Android Design guidelines 4dp 단위 사용)
 
 ```xml
 <dimen name="space_8dp">8dp</dimen>  
@@ -347,16 +336,12 @@ public static UserFragment newInstance(User user) {
 <dimen name="space_24dp">24dp</dimen>
 ```
 
-- 그외에 특정 화면에서 위의 값을 따르지 않는경우, \<WHERE>\_\<DESCRIPTION>\_\<WHAT>의 규칙으로 만든다.
+- 그 외 특정 화면에서 위의 값을 따르지 않는경우, \<WHERE>\_\<DESCRIPTION>\_\<WHAT>의 규칙을 만든다.
 
 ```xml
-<dimen name="register_car_item_car_model_start_padding">40dp</dimen>  
-<dimen name="register_car_item_grade_start_padding">56dp</dimen>  
-<dimen name="register_car_item_car_detail_start_padding">72dp</dimen>
+<dimen name="main_car_item_padding">40dp</dimen>  
+<dimen name="payment_on_item_pagemargin">56dp</dimen>  
 ```
-
-- 2번이상 쓰이는 경우에는 정의해주는 것을 강제하고 1번만 쓰는 경우에는 xml코드에 넣는 것을 허용한다.
-
 
 
 ### String
@@ -365,14 +350,10 @@ public static UserFragment newInstance(User user) {
 - 공통으로 사용한 String 의 경우엔 all\_\<DESCRIPTION>
 
 
-
 ### Color
 
 - \<WHERE>\_\<COLOR>
 - 공통으로 사용한 Color 의 경우엔 all\_\<COLOR>
-
-
-
 
 
 ## Git
