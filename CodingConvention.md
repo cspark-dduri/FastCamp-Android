@@ -1,8 +1,8 @@
 # 코딩 컨벤션
 
-기본 정렬은 intellij 자동완성을 사용 한다.  `Window : ctrl + alt + l` `OR` `Mac`  `option`+`Command`+`l`
+기본 정렬은 intellij 자동완성을 사용 한다.  `Window :` `Ctrl` + `Alt` + `L` `,` `Mac :`  `Option`+`Command`+`L`
 
-impor 정리를 잊지 않도록 한다.  `Window :` `ctrl`+`alt`+`o` `OR`  `Mac`  `option`+`Command`+`o`
+impor 정리를 잊지 않도록 한다.  `Window :` `Ctrl` + `Alt` + `O` `,` `Mac :`  `Option`+`Command`+`O`
 
 *참고한 사이트*
 
