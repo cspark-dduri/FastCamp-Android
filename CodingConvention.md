@@ -5,9 +5,8 @@
 impor 정리를 잊지 않도록 한다.  `Window` `ctrl`+`alt`+`o` `/`  `Mac`  `option`+`Command`+`o`
 
 *참고한 사이트*
+
 [kotlinStyleGuide](https://developer.android.com/kotlin/style-guide)
-[Ribot](https://github.com/ribot/android-guidelines) 
-[PRNDcompany](https://github.com/PRNDcompany/android-style-guide)
 
 
 ## Kotlin
@@ -18,29 +17,25 @@ impor 정리를 잊지 않도록 한다.  `Window` `ctrl`+`alt`+`o` `/`  `Mac`  
 
 - 단축형 또는 알수 없는 이름은 절대 :x:
 
-- **Class files** : [PascalCase](https://zetawiki.com/wiki/%EC%B9%B4%EB%A9%9C%ED%91%9C%EA%B8%B0%EB%B2%95_camelCase,_%ED%8C%8C%EC%8A%A4%EC%B9%BC%ED%91%9C%EA%B8%B0%EB%B2%95_PascalCase)
-  
-  클래스 이름은 구성 요소 이름으로 끝나야 한다.
+- **클래스 이름** : [PascalCase](https://zetawiki.com/wiki/%EC%B9%B4%EB%A9%9C%ED%91%9C%EA%B8%B0%EB%B2%95_camelCase,_%ED%8C%8C%EC%8A%A4%EC%B9%BC%ED%91%9C%EA%B8%B0%EB%B2%95_PascalCase) 따르며, 구성 요소 이름으로 끝나야 한다.
   
   `ex) SignInActivity, SignInFragment, ImageUploaderService, ChangePasswordDialo`
   
-- **Values** : 명사형
-
-  `ex) car`
 
 - **함수 이름** : [camelCase](https://en.wikipedia.org/wiki/Camel_case) 따르며, 동사 또는 동사구를 사용한다. 
 
   `ex) sendMessage 또는 stop`
 
-- **상수 이름** : UPPER_SNAKE_CASE(모두 대문자)를 사용하며 밑줄로 단어를 구분합니다. 
+- **상수 이름** : [UPPER_SNAKE_CASE(모두 대문자)](https://en.wikipedia.org/wiki/Snake_case)를 사용하며, 밑줄로 단어를 구분합니다. 
 
-  ``
+  ```
   const val NUMBER = 5
-val NAMES = listOf("Alice", "Bob")
-val AGES = mapOf("Alice" to 35, "Bob" to 32)
-val COMMA_JOINER = Joiner.on(',') // Joiner is immutable
-val EMPTY_ARRAY = arrayOf()
-  ``
+  val NAMES = listOf("Alice", "Bob")
+  val AGES = mapOf("Alice" to 35, "Bob" to 32)
+  val COMMA_JOINER = Joiner.on(',') // Joiner is immutable
+  val EMPTY_ARRAY = arrayOf()
+  
+  ```
   
 
 - **Member 변수** : mVriableName 
