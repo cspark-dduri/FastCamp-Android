@@ -142,14 +142,16 @@ try {
 
 ```
   companion object{
-    private const val ARG_PARAM_ISMAIN = "ARG_PARAM_ISMAIN"
+    private const val EXTRA_ISMAIN = "EXTRA_ISMAIN"
     
     fun startActivity(act: Activity, isMain: Boolean) {
 	val intent = Intent(act, SecondActivity::class.java)
-	intent.putExtra(ARG_PARAM_ISMAIN, isMain)
+	intent.putExtra(EXTRA_ISMAIN, isMain)
 	act.startActivity(intent)
      }
    }
+   
+   정상적인 코드인지 
 ```
 
 #### Fragment
