@@ -54,7 +54,7 @@
 
   `ex) lvPhoneNumber`
 
-- **Member 변수 중 Observe ** : mRxVriableName 
+- **Member 변수 중 Observe** : mRxVriableName 
 
   `ex) private val mRxReqLogin: PublishSubject<ReqLogIn> = PublishSubject.create()`
 
