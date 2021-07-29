@@ -177,7 +177,7 @@ try {
 /**
  * Created by cspark on 2021-07-29.
  * 사용 용도 작성 (간략히라도 반드시 작성)
- */
+ **/
 ```
 
 - 수정방법: `Preferences` -> `Editor` -> `File and Code Templates` -> `includes`탭 -> `File Header` 내용 삭제
@@ -187,7 +187,7 @@ try {
 
 - 기본적으로 모든 Exception을 찾을 수 있도록 한다
 
-  ```java
+  ```
   catch( Exception | newException .. | LastException e) {
   	// errorHandling
   } catch ( SpecialExcpetion se) {
